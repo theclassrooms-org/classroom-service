@@ -46,10 +46,3 @@ management:
     health:
       probes:
         enabled: true
-
-grpc:
-  server:
-    port: 9090
-    reflection-service-enabled: true
-    health-service-enabled: true
-    max-inbound-message-size: 10MB
