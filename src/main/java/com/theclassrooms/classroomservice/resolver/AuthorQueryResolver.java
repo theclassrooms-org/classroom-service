@@ -16,16 +16,6 @@ import java.util.stream.Collectors;
 @Slf4j
 public class AuthorQueryResolver {
 
-//    @SchemaMapping(typeName = "Classroom", field = "instructor")
-//    public InstructorDTO instructor(ClassroomDTO classroom) {
-//        log.info("Fetching instructor of '{}'", classroom.getName());
-//        return InstructorDTO.builder()
-//                .id(classroom.getInstructorId())
-//                .name("Hudson")
-//                .avatar("https://fifaaddict.com/fo3img/players/ogimage/p158023.jpg?20170901")
-//                .build();
-//    }
-
     @BatchMapping(typeName = "Classroom", field = "instructor")
     public CompletableFuture<Map<ClassroomDTO, InstructorDTO>> instructor(List<ClassroomDTO> classrooms) {
 

@@ -16,6 +16,9 @@ spring:
     baseline-on-migrate: true
     locations: classpath:db/migration
     validate-on-migrate: true
+  threads:
+    virtual:
+      enabled: true
 
 server:
   port: 8090
@@ -43,3 +46,10 @@ management:
     health:
       probes:
         enabled: true
+
+grpc:
+  server:
+    port: 9090
+    reflection-service-enabled: true
+    health-service-enabled: true
+    max-inbound-message-size: 10MB
