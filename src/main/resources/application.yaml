@@ -19,12 +19,17 @@ spring:
   threads:
     virtual:
       enabled: true
+  grpc:
+    server:
+      port: ${GRPC_SERVER_PORT:9090}
 
 server:
   port: 8090
 
 eureka:
   instance:
+    metadata-map:
+      grpc-port: ${spring.grpc.server.port}
     prefer-ip-address: true
   client:
     fetch-registry: true
